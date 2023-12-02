@@ -1,0 +1,138 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+html, body {
+    overflow: hidden;
+}
+
+.container {
+    position: relative; /* Added container with relative positioning */
+    width: 100%; /* Adjust as per your layout */
+    height: 100%; /* Adjust as per your layout */
+}
+
+.webgl {
+    position: fixed; /* or 'fixed' as per your current setup */
+    top: 0;
+    left: 0;
+    width: 100%; /* Ensure full width */
+    height: 100%; /* Ensure full height */
+    outline: none;
+}
+
+.overlay {
+    position: fixed; /* Absolute positioning within the container */
+    top: 10px; /* Adjust the position as needed */
+    left: 200px; /* Adjust the position as needed */
+    z-index: 10; /* Ensures the div is above the canvas */
+    color: rgb(255, 255, 255); /* Adjust text color as needed */
+    /* Add more styling as needed */
+    display: none;
+}
+
+#loadingScreen{
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    top: 0px;
+    left: 0px;
+    z-index: 11;
+    background-color: black;
+    color: purple;
+}
+
+.loader-container {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    gap: 250px;
+    width: 100px; /* Adjust size as needed */
+    height: 100px; /* Same as width for a circle */
+    margin: auto;
+    top: 50%;
+    transform: translateY(-50%);
+}
+
+.loader-circle {
+    width: 100%;
+    height: 100%;
+    border-radius: 50%;
+    border: 5px solid transparent; /* Adjust thickness */
+    border-top: 5px solid #fff; /* Color of the loading bar */
+    animation: spin 2s linear infinite;
+}
+
+.center-image {
+    position: absolute;
+    width: 200%; /* Adjust size as needed */
+    height: auto;
+    left: -50%;
+    top: -40%;
+    transform: translate(-50%, -50%);
+    animation: spin 4s linear infinite;
+}
+
+@keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+}
+
+#mickman {
+    color: rgb(255, 255, 255);
+    font-family: sans-serif;
+    letter-spacing: 1rem;
+    text-align: center;
+    padding-left: 25px;
+}
+
+#launchExperience {
+    background-color: transparent; /* Transparent background */
+    color: white; /* White text */
+    border: 2px solid white; /* White border */
+    padding: 5px; /* Padding around the text */
+    text-align: center; /* Center the text */
+    cursor: pointer; /* Change cursor to pointer */
+    transition: all 0.3s ease; /* Smooth transition for hover effects */
+    outline: none; /* Remove outline */
+    font-size: 16px; /* Adjust font size as needed */
+    font-family: sans-serif;
+    display: none;
+}
+
+#launchExperience:hover {
+    box-shadow: 0 0 15px white; /* White glow effect */
+    transform: scale(1.05); /* Slightly grow the button */
+}
+
+.title2 {
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    gap: 15px;
+}
+
+.title2 h3 {
+    color: rgba(255, 255, 255, 0.686);
+    font-family: sans-serif;
+}
+
+.title2 h2 {
+    color: rgb(255, 255, 255);
+    font-family: sans-serif;
+    animation: pulseGlow 2s ease-in-out infinite;
+}
+
+@keyframes pulseGlow {
+    0%, 100% {
+        text-shadow: 0 0 10px rgba(255, 255, 255, 0.7), 0 0 20px rgba(255, 255, 255, 0.7);
+    }
+    50% {
+        text-shadow: 0 0 15px rgba(255, 255, 255, 1), 0 0 30px rgba(255, 255, 255, 1);
+    }
+}
+
+
